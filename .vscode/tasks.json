@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+  "tasks": [
+    {
+      "taskName": "Chrome",
+      "type": "process",
+      "command": "chrome.exe",
+      "window": {
+        "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs"
+      },
+      "args": [
+        "${file}"
+      ],
+      "probleMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+
+    }
+  ]
+}
