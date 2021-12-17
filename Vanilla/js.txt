@@ -13,3 +13,5 @@
     <script type="text/javascript" src="/Vanilla/Study/BROWSER/HTML IN JAVASCRIPT.js"></script>
     <script type="text/javascript" src="/Vanilla/Study/BROWSER/Searching For Elements.js"></script>
     <script type="text/javascript" src="/Vanilla/Study/BROWSER/The Document Object.js"></script>
+    <script type="text/javascript" src="/Vanilla/Study/BROWSER/EVENTS.js"></script>
+    <script type="text/javascript" src="/Vanilla/Study/BROWSER/CSS IN JAVASCRIPT.js"></script>
