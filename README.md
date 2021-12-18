@@ -1,4 +1,4 @@
-# 오늘의 공부 내용 정리
+# 공부 내용 정리
 EVENT.JS   
 console.log에서 body에 매우 쉽게 접근 할 수 있다.  
 body는 특별해서 콘솔창에서 document.body로 호출이 가능하다
@@ -16,11 +16,13 @@ className을 변경하고 제거하고 추가하는지 배웠다
 
 classlist는 class들의 목록으로 작업할 수 있겠금 허용해준다
 className은 그냥 모든 것을 교체해버린다 이전에 class들은 상관하지 않고
-   
-   
-   
+
 Classlist.js   
 toggle은 h1의 classList에 clicked class가 이미 있는지 확인해서
 만약 h1의 classList에 존재하지 않는다면,  불빛이 나오고 다시
-한번 누르면 꺼진다 
+한번 누르면 꺼진다   
 (12/17)
+---
+(html)에서는 input과 button을 만드는 방법을 배웠고  
+(js)에서는 preventDefault에 대한 사용법 login을 어떻게 하는 지에 대해 간단하게 배웠다  
+(12/18)
