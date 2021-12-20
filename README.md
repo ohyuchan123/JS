@@ -25,4 +25,12 @@ toggle은 h1의 classList에 clicked class가 이미 있는지 확인해서
 ---
 (html)에서는 input과 button을 만드는 방법을 배웠고  
 (js)에서는 preventDefault에 대한 사용법 login을 어떻게 하는 지에 대해 간단하게 배웠다  
-(12/18)
+(12/18)   
+---
+localStorage는 브라우저에 뭔가를 저장할 수 있게 해준다.  
+그래서 나중에 가져다가 쓸 수 있게 도와준다.  
+setitem을 활용하면 local storage에 정보를 저장할 수 있다. 
+local storage가 비어 있으면 form부터 보여주면서 지금까지 해오던 걸 하면 되고 local storage에 유저정보가 있으면 form을 보여주면 안된다. 
+h1요소 부터 보여줘야 한다.      
+local storage는 F12 elements application에 위치해 있다.   
+(12/20)
