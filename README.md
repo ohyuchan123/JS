@@ -41,4 +41,6 @@ local storage는 F12 elements application에 위치해 있다.
 
 sayInterval은 두 개의 argument를 받아 첫번째 argument는 내가 실행하고자 하는 function이고   
 두번째 argument는 호출되는 function 간격을 몇 ms(milliseconds)로 할 찌 쓰면 된다.   
+시계 만드는 법에 대해 공부하였다
+clock.js
 (12/21)
