@@ -13,7 +13,7 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = logininput.value;
     localStorage.setItem("USERNAME_KEY",username);
-    paintGreeting(username);
+    paintGreetings(username);
 }
 
 // loginButton.addEventListener("click",onLoginBtnClick);
@@ -29,15 +29,13 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 // console.log(savedUsername);
 
-if(savedUsername===null){
+if(savedUsername!=null){
     //show the form
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit",onLoginSubmit);
-
 }else{
     //show the greetings
     paintGreetings(savedUsername);
 }
-
 
 

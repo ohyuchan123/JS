@@ -27,7 +27,7 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = logininput.value;
     localStorage.setItem("USERNAME_KEY",username);
-    paintGreeting(username);
+    paintGreetings(username);
 }
 
 // function handleLinckClick(event){
