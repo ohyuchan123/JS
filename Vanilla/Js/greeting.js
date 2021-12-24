@@ -8,7 +8,7 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event){
     //어떤 이벤트를 명시적으로 처리하지 않은 경우 해당 이벤트에 대한 사용자 에이전트의 기본 동작을 하지 않게 한다
-    event.preventDefault(); 
+    event.preventDefault();
     // console.log(event);
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = logininput.value;
@@ -37,5 +37,3 @@ if(savedUsername!=null){
     //show the greetings
     paintGreetings(savedUsername);
 }
-
-

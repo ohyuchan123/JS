@@ -7,3 +7,4 @@ const bdImage = document.createElement("img");
 bdImage.src = `/Vanilla/img/${chosenImage}`;
 
 document.body.appendChild(bdImage);
+
