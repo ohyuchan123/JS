@@ -22,10 +22,37 @@ img{
 body{
     color: white;
 }
-
+h1{
+    text-align: center;
+}
 #clock{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: xx-large;
+}
+
+.cententwarp{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top: 150px;
+    width: 500px;
+    height: 700px;
+}
+
+#clock{
+    font-size: 125px;
+}
+form{
+    text-align: center;
+}
+li{
+    text-align: center;
+}
+#quote{
+    text-align: center;
+}
+::marker{
+    text-align: center;
 }
