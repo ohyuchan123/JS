@@ -77,5 +77,44 @@ margin-bottom 속성은 요소의 아래쪽에 바깥 여백 영역을 설정합
 paintbrush complete
 ---
 
+```js
+const canvas = document.getElementById("jsCanvas");
+const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("jsColor");
+const range = document.getElementById("jsRange");
+const mode = document.getElementById("jsMode");
+const saveBtn = document.getElementById("jsSave");
+```
+(canvas)jsCanvas는 캔버스 API를 통해 그래픽을 그리기위한 수단 제공
+(ctx)2d는 캔버스를 2d 그래픽을 그리도록 해 줌
+(colors)jsColor 색을 지정
+(range)jsRange  범위,그림판의 크기를 지정
+(mode)jsMode mode라는 return 값을 이용하여 이후 addEventLisetner 함수를 통해 클릭시 mode가 바뀌도록 설정
+(saveBtn)jsSave save버튼을 클릭시 그림을 사진 형식으로 저장
+
+```js
+const INITIAL_COLOR = "#2c2c2c";
+const CANVAS_SIZE = 700;
+
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
+
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+ctx.strokeStyle = INITIAL_COLOR;
+ctx.fillStyle = INITIAL_COLOR;
+ctx.lineWidth = 2.5;
+let painting = false;
+let filling = false;
+```
+INITIAL_COLOR 처음 색을 지정
+CANVAS_SIZE 캔버스의 사이즈를 700으로 지정
+canvas.width(넓이) , canvas.height(높이)를 700으로 지정
+ctx.fillStyle 캔버스의 색을 흰색으로 지정
+ctx.fillRect 캔버스를 위한 도형을 그린다
+ctx.strokeStyle  스타일과 색을 적용
+ctx.lineWidth 펜의 두깨를 지정
+let painting,let filling let은 변수이기에 지금은 false 부정이지만 나중에 긍정으로 바뀔 수 있다
+
 code analyze
 (2022/01/08)
