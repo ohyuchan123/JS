@@ -1,1 +1,52 @@
 @import "reset.css";
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    width: 100%;
+    background-color: #3b5999;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+.word-display{
+    margin-top: 3rem;
+    font-size: 80px;
+    color: #3b5999;
+}
+.word-input-box{
+    margin-top: 2rem;
+}
+.word-input{
+    padding: 0.5rem;
+    width: 300px;
+}
+.game-info{
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    display: flex;
+    /*justify-content: space-between 양 옆으로 붙이는 기능*/
+    justify-content: space-between;
+    width: 200px;
+}
+.time, .score{
+    font-size: 30px;
+}
+.button{
+    width: 200px;
+    height: 35px;
+    background: #3b5999;
+    color: #fff;
+    border: none;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+.loading{
+    background: #ccc;
+    /*버튼을 클릭할 수 없게 만듬*/
+    cursor: not-allowed;
+
+}
