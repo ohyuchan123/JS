@@ -19,6 +19,7 @@ const button = document.querySelector('.button');
 init();
 
 function init(){
+    buttonChange('게임 로딩중....');
     getWords();
     wordinput.addEventListener('input',checkMatch);
 }
@@ -44,7 +45,26 @@ function checkStatus(){
 
 //단어 불러오기
 function getWords(){
-    words = ['display','convince','consensus','affordable','price','purchase'];
+    /*단어장 불러올 예정*/
+    // Make a request for a user with a given ID
+    axios.get('https://random-word-api.herokuapp.com/word?number=100')
+    .then(function (response) {
+        // handle success
+        response.date.foreach((word)=>{
+            if(word.length<10){
+            words.push(word);
+            console.log(word);
+        }
+    });
+    buttonChange('게임 시작');
+    console.log(words);
+    // console.log(response.date);
+    })
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    });
+    // words = ['display','convince','consensus','affordable','price','purchase'];
     buttonChange('게임시작');
 }
 
