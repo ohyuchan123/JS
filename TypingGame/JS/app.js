@@ -7,8 +7,8 @@ let time = GAME_TIME;
 // let time =9;
 let isPlaying = false;
 let timeInterval;
-let words =[];
 let checkInterval;
+let words =[];
 
 const wordinput = document.querySelector('.word-input');
 const wordDisplay = document.querySelector('.word-display');
@@ -16,7 +16,10 @@ const scoreDisplay = document.querySelector('.score');
 const timeDisplay = document.querySelector('.time');
 const button = document.querySelector('.button');
 
+
 init();
+
+
 
 function init(){
     buttonChange('게임 로딩중....');
@@ -26,6 +29,9 @@ function init(){
 
 // 게임 실행
 function run(){
+    if(isPlaying){
+        return;
+    }
     isPlaying =true;
     time=GAME_TIME;
     wordinput.focus();
@@ -47,25 +53,24 @@ function checkStatus(){
 function getWords(){
     /*단어장 불러올 예정*/
     // Make a request for a user with a given ID
-    axios.get('https://random-word-api.herokuapp.com/word?number=100')
+    axios.get('https://random-word-api.herokuapp.com/word?number=10000')
     .then(function (response) {
         // handle success
-        response.date.foreach((word)=>{
+        response.date.forEach((word)=>{
             if(word.length<10){
-            words.push(word);
-            console.log(word);
-        }
-    });
-    buttonChange('게임 시작');
-    console.log(words);
-    // console.log(response.date);
+                words.push(word);
+            }
+        })
+        console.log(words)
+        buttonChange('게임 시작');
+        // console.log(response.date);
     })
     .catch(function (error) {
         // handle error
         console.log(error);
-    });
+    })
     // words = ['display','convince','consensus','affordable','price','purchase'];
-    buttonChange('게임시작');
+    buttonChange('게임시작')
 }
 
 //단어일치 체크
