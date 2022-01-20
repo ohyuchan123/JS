@@ -121,3 +121,7 @@ function buttonChange(text){
     text === '게임 시작' ? button.classList.remove('loading') : button.classList.add('loading');
 }
 ```
+buttonChange -> 버튼을 눌렀을 때 게임 시작이라고 바꿔줌
+
+countDown -> 제한시간 시간을 줄이는 함수
+buttonChange -> 버튼을 바꿔주는 함수
