@@ -88,3 +88,36 @@ function getWords(){
 ```
 funtion getWords() -> 단어를 불러오는 함수
 axios.get('~~') -> 랜덤으로 단어장을 만들어준 사이트를 불러와줌
+
+```js
+//단어일치 체크
+function checkMatch(){
+        if(wordinput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()){
+            wordinput.value="";
+            if(!isPlaying){
+                return;
+            }
+            score++;
+            scoreDisplay.innerText = score;
+            time=GAME_TIME;
+            const randomIndex = Math.floor(Math.random()*words.length);
+            wordDisplay.innerText = words[randomIndex];
+    }
+}
+
+buttonChange('게임 시작');
+
+function countDown(){
+    time > 0 ? time-- : isPlaying = false;
+    if(!isPlaying){
+        clearInterval(timeInterval);
+    }
+    timeDisplay.innerText = time;
+}
+
+
+function buttonChange(text){
+    button.innerText = text;
+    text === '게임 시작' ? button.classList.remove('loading') : button.classList.add('loading');
+}
+```
