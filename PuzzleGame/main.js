@@ -23,6 +23,7 @@ function createImageTiles(){
     Array(tileCount).fill().forEach((_,i)=>{
         const li = document.createElement("li");
         li.setAttribute('data-index',i)
+        li.setAttribute('draggable','true')
         li.classList.add(`list${i}`);
         container.appendChild(li);
         /*tempArray에 하나씩 배열을 담아 준다*/
@@ -44,3 +45,12 @@ function suffle(array){
 }
 
 //events
+container.addEventListener('dragstart',e=>{
+    console.log(e);
+})
+container.addEventListener('dragover',e=>{
+    console.log('over');
+})
+container.addEventListener('drop',e=>{
+    console.log('dropped');
+})
