@@ -5,11 +5,36 @@ const playTime =  document.querySelector(".play-time")
 
 const tileCount =16;
 let tiles=[];
+const dragged={
+    el:null,
+    class:null,
+    index:null,
+}
+let isPlaying = false;
+let timeInterval = null;
+let time = 0;
 
-setGame();
+//functions
+function checkStatus(){
+    const currenList=[...container.children];
+    const unMatchedList =  currenList.filter((li,index)=>Number(child.getAttribute("data-index")) !== index)
+    if(unMatchedList.length === 0)
+    {
+        //game finish
+        gameText.style.display = "block";
+        isPlaying = false;
+    }
+}
 
 function setGame(){
+    isPlaying = true;
     container.innerHTML = "";
+
+    timeInterval = setInterval(()=>{
+        playtime.innerText = time;
+        time++;
+    },1000)
+
     tiles = createImageTiles();
     tiles.forEach(tile=>container.appendChild(tile))
     setTimeout(()=>{
@@ -44,13 +69,47 @@ function suffle(array){
     return array;
 }
 
+
 //events
 container.addEventListener('dragstart',e=>{
-    console.log(e);
+    if(isPlaying===false){
+        return;
+    }
+    // console.log(e);
+    const obj = e.target;
+    dragged.el = obj;
+    dragged.class = obj.className;
+    console.log(typeof obj.parentNode.children);
+    dragged.index = [...obj.parentNode.children].indexOf(obj);
 })
 container.addEventListener('dragover',e=>{
+    /*이벤트가 발생하지 않도록*/
+    e.preventDefault()
     console.log('over');
 })
 container.addEventListener('drop',e=>{
-    console.log('dropped');
+    // console.log('dropped');
+    const obj = e.target;
+
+
+    if(obj.className !== dragged.class){
+        let originPlace;
+        let isLast = false;
+    
+        if(dragged.el.nextSibling){
+            originPlace = dragged.el.nextSibling;
+        }else{
+            originPlace = dragged.el.previousSibling;
+            isLast = true;
+        }
+
+        const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+        dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el)
+        isLast ? originPlace.after(obj) : originPlace.before(obj)
+    }
+    checkStatus();
+})
+
+startButton.addEventListener('click',()=>{
+    setGame();
 })
