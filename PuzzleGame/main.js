@@ -4,6 +4,7 @@ const gameText =  document.querySelector(".game-text")
 const playTime =  document.querySelector(".play-time")
 
 const tileCount =16;
+
 let tiles=[];
 const dragged={
     el:null,
@@ -23,15 +24,18 @@ function checkStatus(){
         //game finish
         gameText.style.display = "block";
         isPlaying = false;
+        clearInterval(timeInterval);
     }
 }
 
 function setGame(){
     isPlaying = true;
+    time =0;
     container.innerHTML = "";
-
+    gameText.style.display = 'none';
+    clearInterval(timeInterval);
     timeInterval = setInterval(()=>{
-        playtime.innerText = time;
+        playTime.innerText = time;
         time++;
     },1000)
 
