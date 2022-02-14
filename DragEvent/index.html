@@ -10,12 +10,29 @@
 </head>
 <body>
     <ul class="list">
-        <li class="item">P</li>
-        <li class="item">P</li>
-        <li class="item">A</li>
-        <li class="item">E</li>
-        <li class="item">L</li>
+        <li class="item" draggable="true">P</li>
+        <li class="item" draggable="true">P</li>
+        <li class="item" draggable="true">A</li>
+        <li class="item" draggable="true">E</li>
+        <li class="item" draggable="true">L</li>
     </ul>
-    <script src="/DragEvent/app.js"></script>
+    <script>
+        const list = document.querySelector(".list");
+        let picked=null;
+
+
+        list.addEventListener("dragstart",(e)=>{
+            picked=e.target;
+            // console.log(e);
+        });
+        list.addEventListener("dragover",(e)=>{
+            // console.log(e);
+            e.preventDefault();
+        });
+        list.addEventListener("drop",(e)=>{
+            // console.log(e);
+            e.target.before(picked);
+        })
+    </script>
 </body>
 </html>
