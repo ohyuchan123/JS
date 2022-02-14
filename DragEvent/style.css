@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.list{
+    margin: 30px,0px;
+    text-align: center;
+    font-size: 40px;
+}
+.item{
+    list-style-type: none;
+    float: left;
+    margin-left: 5px;
+    border-width: 10px 0.7em;
+    border-style: solid;
+    border-color: #FF8A71;
+    background-color: #FF8A71;
+    color: white;
+}
