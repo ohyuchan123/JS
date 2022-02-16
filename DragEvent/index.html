@@ -19,10 +19,17 @@
     <script>
         const list = document.querySelector(".list");
         let picked=null;
-
-
+        let pickedIndex = null;
         list.addEventListener("dragstart",(e)=>{
-            picked=e.target;
+            const obj = e.target;
+            picked=obj;
+            pickedIndex = [...obj.parentNode.children.indexOf(obj)];
+            // console.log(...obj.parentNode.children.indexOf(obj));
+            // const testArray= [2,3,4,5];
+            /*...은 겉은 날리고 안에 있는 내용만 가지고 오는 것*/
+            // const newArray = [...testArray]; 
+            // console.log(newArray);
+            // console.log({obj});
             // console.log(e);
         });
         list.addEventListener("dragover",(e)=>{
