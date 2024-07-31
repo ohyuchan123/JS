@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Example</title>
+</head>
+<body>
+    <script>
+        // object, array의 구조를 그대로 유지하는 것이 아니라,
+        // object의 property, array의 index 기반으로 분해하여 다른 변수에 할당
+
+        // 객체 destructuring
+        const person = { name: "John", age: 30, job: "Developer" };
+        const { name, age } = person;
+        console.log(name); // "John"
+        console.log(age);  // 30
+
+        // 배열 destructuring
+        const colors = ["red", "green", "blue"];
+        const [firstColor, secondColor] = colors;
+        console.log(firstColor);  // "red"
+        console.log(secondColor); // "green"
+
+        // 기본값 설정
+        const { city = "Seoul" } = person;
+        console.log(city); // "Seoul" (person 객체에 city가 없으므로 기본값 사용)
+
+        // 변수 이름 변경
+        const { name: personName } = person;
+        console.log(personName); // "John"
+
+        // 중첩된 객체 destructuring
+        const user = {
+            id: 42,
+            info: {
+                name: "Alice",
+                age: 25
+            }
+        };
+        const { info: { name: userName, age: userAge } } = user;
+        console.log(userName); // "Alice"
+        console.log(userAge);  // 25
+
+        // 함수 매개변수에서의 destructuring
+        function printPersonInfo({ name, age }) {
+            console.log(`Name: ${name}, Age: ${age}`);
+        }
+        printPersonInfo(person); // "Name: John, Age: 30"
+    </script>
+</body>
+</html>

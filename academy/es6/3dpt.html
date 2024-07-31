@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operators</title>
+</head>
+<body>
+    <script>
+        // Rest operator (...) - 나머지를 받아주는 연산자
+        {
+            // 객체에서의 rest operator
+            let obj = {a: 1, b: 2, c: 3, d: 4};
+            let {a, b, ...rest} = obj;
+            console.log(a);    // 1
+            console.log(b);    // 2
+            console.log(rest); // {c: 3, d: 4}
+
+            // 배열에서의 rest operator
+            let arr = [1, 2, 3, 4, 5];
+            let [first, second, ...others] = arr;
+            console.log(first);  // 1
+            console.log(second); // 2
+            console.log(others); // [3, 4, 5]
+
+            // 함수 매개변수에서의 rest operator
+            function sum(...numbers) {
+                return numbers.reduce((acc, cur) => acc + cur, 0);
+            }
+            console.log(sum(1, 2, 3, 4)); // 10
+        }
+
+        // Spread operator (...) - 객체나 배열을 펼치는 연산자
+        {
+            // 객체 복사 (shallow copy)
+            let obj = {a: 1, b: 2, c: 3};
+            let obj2 = {...obj};
+            console.log(obj2); // {a: 1, b: 2, c: 3}
+            obj.b = 4;
+            console.log(obj2); // {a: 1, b: 2, c: 3} (obj2는 변경되지 않음)
+
+            // 객체 병합
+            let obj3 = {d: 4, e: 5};
+            let mergedObj = {...obj, ...obj3};
+            console.log(mergedObj); // {a: 1, b: 4, c: 3, d: 4, e: 5}
+
+            // 배열 복사
+            let arr = [1, 2, 3];
+            let arr2 = [...arr];
+            console.log(arr2); // [1, 2, 3]
+            arr[0] = 4;
+            console.log(arr2); // [1, 2, 3] (arr2는 변경되지 않음)
+
+            // 배열 병합
+            let arr3 = [4, 5];
+            let mergedArr = [...arr, ...arr3];
+            console.log(mergedArr); // [4, 2, 3, 4, 5]
+        }
+    </script>
+</body>
+</html>
